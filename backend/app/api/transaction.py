@@ -42,7 +42,7 @@ class TransactionOut(BaseModel):
 
 
 
-@router.post("/", response_model=TransactionOut)
+@router.post("/")
 async def create_transaction(
     new_tx: TransactionCreate,
     db: db_dependency,
@@ -94,7 +94,7 @@ async def get_transactions(
 
 
 
-@router.get("/{transaction_id}", response_model=TransactionOut)
+@router.get("/{transaction_id}")
 async def get_transaction(
     transaction_id: int,
     db: db_dependency,
